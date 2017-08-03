@@ -105,6 +105,7 @@ return call_user_func( function(){
 		'*.htm' => 'html' ,
 		'*.css' => 'css' ,
 		'*.js' => 'js' ,
+		'*.php' => 'php' ,
 		'*.png' => 'pass' ,
 		'*.jpg' => 'pass' ,
 		'*.gif' => 'pass' ,
@@ -189,6 +190,9 @@ return call_user_func( function(){
 
 		// PX=px2dthelper
 		'tomk79\pickles2\px2dthelper\main::register' ,
+
+		// PHPアプリケーションフレームワーク
+		'tomk79\pickles2\paprikaFramework2\main::exec()' ,
 	);
 
 
