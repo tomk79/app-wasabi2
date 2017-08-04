@@ -1,4 +1,9 @@
 <?php
+if( !isset($paprika) ){
+	echo '{$main_contents}'."\n";
+	return;
+}
+
 $form = $paprika->conf()->exdb->get_form();
 
 ob_start();
@@ -16,14 +21,12 @@ $form->automatic_signup_form(
 );
 $src = ob_get_clean();
 
-$tpl = $paprika->bind_template(
-	array(
-		'{$main_contents}'=>$src
-	),
-	'/signup_files/templates/index.html'
-);
 
 // -----------------------------------
 // 出力して終了する
-echo $tpl;
+echo $paprika->bind_template(
+	array(
+		'{$main_contents}'=>$src
+	)
+);
 exit();

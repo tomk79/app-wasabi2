@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8" />
-		<title>ログイン | WASABI 2</title>
+		<title>ログアウト | WASABI 2</title>
 
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta name="keywords" content="" />
@@ -29,7 +29,7 @@
 			<div class="container">
 				<p class="theme_si"><a href="/">WASABI 2</a></p>
 				<div class="theme_shouldernavi">
-<ul><li><a href="/signup.php">サインアップ</a></li><li><a href="/login_files/templates/" class="current">ログイン</a></li><li><a href="/logout.php">ログアウト</a></li></ul>				</div>
+<ul><li><a href="/signup.php">サインアップ</a></li><li><a href="/login.php">ログイン</a></li><li><a href="/logout.php" class="current">ログアウト</a></li></ul>				</div>
 				<div class="theme_globalnavi">
 <ul></ul>
 				</div>
@@ -39,16 +39,16 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-sm-9">
-						<div class="theme_breadcrumb"><ul><li><a href="/">ホーム</a></li><li><span>ログイン</span></li></ul></div>
-						<h1>ログイン</h1>
+						<div class="theme_breadcrumb"><ul><li><a href="/">ホーム</a></li><li><span>ログアウト</span></li></ul></div>
+						<h1>ログアウト</h1>
 						<div class="contents">
 {$main_contents}
 						</div>
-						<div class="theme_breadcrumb"><ul><li><a href="/">ホーム</a></li><li><span>ログイン</span></li></ul></div>
+						<div class="theme_breadcrumb"><ul><li><a href="/">ホーム</a></li><li><span>ログアウト</span></li></ul></div>
 					</div>
 					<div class="col-sm-3">
 						<nav class="theme_common_navi">
-							<p><a href="/login_files/templates/">ログイン</a></p>
+							<p><a href="/logout.php">ログアウト</a></p>
 						</nav>
 					</div>
 				</div><!-- /.row -->
@@ -60,7 +60,7 @@
 				</nav>
 			</div>
 			<div class="container theme_footer_shouldernavi">
-<ul><li><a href="/">ホーム</a></li><li><a href="/signup.php">サインアップ</a></li><li><a href="/login_files/templates/" class="current">ログイン</a></li><li><a href="/logout.php">ログアウト</a></li></ul>			</div>
+<ul><li><a href="/">ホーム</a></li><li><a href="/signup.php">サインアップ</a></li><li><a href="/login.php">ログイン</a></li><li><a href="/logout.php" class="current">ログアウト</a></li></ul>			</div>
 			<div class="container">
 				<p style="text-align:center;">&copy;Pickles 2 Project.</p>
 			</div>

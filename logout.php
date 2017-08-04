@@ -16,10 +16,15 @@ while(1){
 }
 unset($tmp_path_autoload);
 
-$paprika = new \tomk79\pickles2\paprikaFramework2\paprika(json_decode('{"file_default_permission":"775","dir_default_permission":"775","filesystem_encoding":"UTF-8","session_name":"PXSID","session_expire":1800,"directory_index":["index.html"],"realpath_controot":"./","realpath_controot_preview":"./src/","realpath_homedir":"./px-files/","path_controot":"/"}'), false);
+$paprika = new \tomk79\pickles2\paprikaFramework2\paprika(json_decode('{"file_default_permission":"775","dir_default_permission":"775","filesystem_encoding":"UTF-8","session_name":"PXSID","session_expire":1800,"directory_index":["index.html"],"realpath_controot":"./","realpath_controot_preview":"./src/","realpath_homedir":"./px-files/","path_controot":"/","realpath_files":"./logout_files/"}'), false);
 
 ?>
 <?php
+if( !isset($paprika) ){
+	echo '{$main_contents}'."\n";
+	return;
+}
+
 $form = $paprika->conf()->exdb->get_form();
 $form->logout('user');
 ?>
@@ -27,14 +32,11 @@ $form->logout('user');
 <p>ログアウトしました。</p>
 
 <?php
-$tpl = $paprika->bind_template(
-	array(
-		'{$main_contents}'=>ob_get_clean()
-	),
-	'/logout_files/templates/index.html'
-);
-
 // -----------------------------------
 // 出力して終了する
-echo $tpl;
+echo $paprika->bind_template(
+	array(
+		'{$main_contents}'=>ob_get_clean()
+	)
+);
 exit();

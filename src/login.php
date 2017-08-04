@@ -1,4 +1,9 @@
 <?php
+if( !isset($paprika) ){
+	echo '{$main_contents}'."\n";
+	return;
+}
+
 $form = $paprika->conf()->exdb->get_form();
 $form->auth(
 	'user', // テーブル名
@@ -13,14 +18,11 @@ $form->auth(
 <p><a href="/">戻る</a></p>
 
 <?php
-$tpl = $paprika->bind_template(
-	array(
-		'{$main_contents}'=>ob_get_clean()
-	),
-	'/login_files/templates/index.html'
-);
-
 // -----------------------------------
 // 出力して終了する
-echo $tpl;
+echo $paprika->bind_template(
+	array(
+		'{$main_contents}'=>ob_get_clean()
+	)
+);
 exit();

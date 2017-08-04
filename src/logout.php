@@ -1,4 +1,9 @@
 <?php
+if( !isset($paprika) ){
+	echo '{$main_contents}'."\n";
+	return;
+}
+
 $form = $paprika->conf()->exdb->get_form();
 $form->logout('user');
 ?>
@@ -6,14 +11,11 @@ $form->logout('user');
 <p>ログアウトしました。</p>
 
 <?php
-$tpl = $paprika->bind_template(
-	array(
-		'{$main_contents}'=>ob_get_clean()
-	),
-	'/logout_files/templates/index.html'
-);
-
 // -----------------------------------
 // 出力して終了する
-echo $tpl;
+echo $paprika->bind_template(
+	array(
+		'{$main_contents}'=>ob_get_clean()
+	)
+);
 exit();
