@@ -1,6 +1,16 @@
+<?php
+$form = $paprika->conf()->exdb->get_form();
+$form->auth(
+	'user', // テーブル名
+	array( // 照合するデータ
+		'user_account',
+		'password',
+	)
+);
+?>
 <?php ob_start(); ?>
-<p>テンプレート中の文字列 <code>{$main_contents}</code> を、HTMLコードに置き換えます。</p>
-<p>アプリケーションの動的な処理を実装することもできます。</p>
+<p>ログインしました。</p>
+<p><a href="/">戻る</a></p>
 
 <?php
 $tpl = $paprika->bind_template(

@@ -19,14 +19,27 @@ unset($tmp_path_autoload);
 $paprika = new \tomk79\pickles2\paprikaFramework2\paprika(json_decode('{"file_default_permission":"775","dir_default_permission":"775","filesystem_encoding":"UTF-8","session_name":"PXSID","session_expire":1800,"directory_index":["index.html"],"realpath_controot":"./","realpath_controot_preview":"./src/","realpath_homedir":"./px-files/","path_controot":"/"}'), false);
 
 ?>
-<?php ob_start(); ?>
-<p>テンプレート中の文字列 <code>{$main_contents}</code> を、HTMLコードに置き換えます。</p>
-<p>アプリケーションの動的な処理を実装することもできます。</p>
-
 <?php
+$form = $paprika->conf()->exdb->get_form();
+
+ob_start();
+$form->automatic_signup_form(
+	'user', // テーブル名
+	array( // 初期登録するカラム
+		'user_account',
+		'user_name',
+		'email',
+		'password',
+	),
+	array( // Options
+		'href_backto'=>'/' // 戻り先のURL
+	)
+);
+$src = ob_get_clean();
+
 $tpl = $paprika->bind_template(
 	array(
-		'{$main_contents}'=>ob_get_clean()
+		'{$main_contents}'=>$src
 	),
 	'/signup_files/templates/index.html'
 );

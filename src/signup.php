@@ -1,11 +1,24 @@
-<?php ob_start(); ?>
-<p>テンプレート中の文字列 <code>{$main_contents}</code> を、HTMLコードに置き換えます。</p>
-<p>アプリケーションの動的な処理を実装することもできます。</p>
-
 <?php
+$form = $paprika->conf()->exdb->get_form();
+
+ob_start();
+$form->automatic_signup_form(
+	'user', // テーブル名
+	array( // 初期登録するカラム
+		'user_account',
+		'user_name',
+		'email',
+		'password',
+	),
+	array( // Options
+		'href_backto'=>'/' // 戻り先のURL
+	)
+);
+$src = ob_get_clean();
+
 $tpl = $paprika->bind_template(
 	array(
-		'{$main_contents}'=>ob_get_clean()
+		'{$main_contents}'=>$src
 	),
 	'/signup_files/templates/index.html'
 );
