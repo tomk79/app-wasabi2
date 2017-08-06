@@ -16,7 +16,7 @@ while(1){
 }
 unset($tmp_path_autoload);
 
-$paprika = new \tomk79\pickles2\paprikaFramework2\paprika(json_decode('{"file_default_permission":"775","dir_default_permission":"775","filesystem_encoding":"UTF-8","session_name":"PXSID","session_expire":1800,"directory_index":["index.html"],"realpath_controot":"./","realpath_controot_preview":"../src/","realpath_homedir":"../px-files/","path_controot":"/","realpath_files":"./login_files/"}'), false);
+$paprika = new \tomk79\pickles2\paprikaFramework2\paprika(json_decode('{"file_default_permission":"775","dir_default_permission":"775","filesystem_encoding":"UTF-8","session_name":"PXSID","session_expire":1800,"directory_index":["index.html"],"realpath_controot":"../","realpath_controot_preview":"../../src/","realpath_homedir":"../../px-files/","path_controot":"/","realpath_files":"./index_files/"}'), false);
 
 ?>
 <?php
@@ -26,20 +26,10 @@ if( !isset($paprika) ){
 }
 
 ob_start();
-
 $form = $paprika->conf()->exdb->get_form($paprika->conf()->exdb_form_options);
-$is_login = $form->auth(
-	'user', // テーブル名
-	array( // 照合するデータ
-		'user_account',
-		'password',
-	)
-);
-if( $is_login ){ ?>
-<p>ログインしました。</p>
-<p><a href="/">戻る</a></p>
-<?php }
-
+$form->automatic_form();
+?>
+<?php
 // -----------------------------------
 // 出力して終了する
 echo $paprika->bind_template(

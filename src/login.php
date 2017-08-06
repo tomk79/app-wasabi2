@@ -4,20 +4,21 @@ if( !isset($paprika) ){
 	return;
 }
 
-$form = $paprika->conf()->exdb->get_form();
-$form->auth(
+ob_start();
+
+$form = $paprika->conf()->exdb->get_form($paprika->conf()->exdb_form_options);
+$is_login = $form->auth(
 	'user', // テーブル名
 	array( // 照合するデータ
 		'user_account',
 		'password',
 	)
 );
-?>
-<?php ob_start(); ?>
+if( $is_login ){ ?>
 <p>ログインしました。</p>
 <p><a href="/">戻る</a></p>
+<?php }
 
-<?php
 // -----------------------------------
 // 出力して終了する
 echo $paprika->bind_template(

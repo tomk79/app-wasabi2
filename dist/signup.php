@@ -25,7 +25,7 @@ if( !isset($paprika) ){
 	return;
 }
 
-$form = $paprika->conf()->exdb->get_form();
+$form = $paprika->conf()->exdb->get_form($paprika->conf()->exdb_form_options);
 
 ob_start();
 $form->automatic_signup_form(

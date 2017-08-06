@@ -38,6 +38,11 @@ return call_user_func( function(){
 		"path_cache_dir" => __DIR__.'/_sys/ram/caches/excellent_db/',
 	) );
 	$conf_paprika->exdb = $exdb;
+	$conf_paprika->exdb_form_options = array(
+		'templates' => array(
+			__DIR__.'/excellent_db/templates/'
+		)
+	);
 
 	return $conf_paprika;
 } );

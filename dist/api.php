@@ -21,5 +21,6 @@ $paprika = new \tomk79\pickles2\paprikaFramework2\paprika(json_decode('{"file_de
 ?>
 <?php
 @header('Content-type: text/json');
-echo '{}';
+$rest = $paprika->conf()->exdb->get_rest();
+$rest->automatic_rest_api();
 exit();

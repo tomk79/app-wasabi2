@@ -4,12 +4,10 @@ if( !isset($paprika) ){
 	return;
 }
 
+ob_start();
 $form = $paprika->conf()->exdb->get_form($paprika->conf()->exdb_form_options);
-$form->logout('user');
+$form->automatic_form();
 ?>
-<?php ob_start(); ?>
-<p>ログアウトしました。</p>
-
 <?php
 // -----------------------------------
 // 出力して終了する

@@ -29,7 +29,7 @@
 			<div class="container">
 				<p class="theme_si"><a href="/">WASABI 2</a></p>
 				<div class="theme_shouldernavi">
-<ul><li><a href="/signup.php">サインアップ</a></li><li><a href="/login.php" class="current">ログイン</a></li><li><a href="/logout.php">ログアウト</a></li></ul>				</div>
+<ul><li><a href="/signup.php">サインアップ</a></li><li><a href="/login.php" class="current">ログイン</a></li><li><a href="/profile/index.php">プロフィール</a></li><li><a href="/projects/index.php">プロジェクト</a></li><li><a href="/_tmp/form.php">Forms</a></li><li><a href="/logout.php">ログアウト</a></li></ul>				</div>
 				<div class="theme_globalnavi">
 <ul></ul>
 				</div>
@@ -60,7 +60,7 @@
 				</nav>
 			</div>
 			<div class="container theme_footer_shouldernavi">
-<ul><li><a href="/">ホーム</a></li><li><a href="/signup.php">サインアップ</a></li><li><a href="/login.php" class="current">ログイン</a></li><li><a href="/logout.php">ログアウト</a></li></ul>			</div>
+<ul><li><a href="/">ホーム</a></li><li><a href="/signup.php">サインアップ</a></li><li><a href="/login.php" class="current">ログイン</a></li><li><a href="/profile/index.php">プロフィール</a></li><li><a href="/projects/index.php">プロジェクト</a></li><li><a href="/_tmp/form.php">Forms</a></li><li><a href="/logout.php">ログアウト</a></li></ul>			</div>
 			<div class="container">
 				<p style="text-align:center;">&copy;Pickles 2 Project.</p>
 			</div>
