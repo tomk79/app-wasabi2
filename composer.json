@@ -12,6 +12,9 @@
     "scripts":{
         "test": [
             "php ./vendor/phpunit/phpunit/phpunit"
+        ],
+        "migrate": [
+            "php ./src/.px_execute.php -u \"Mozilla\" /migrate/init.php"
         ]
     } ,
     "minimum-stability": "stable",
