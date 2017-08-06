@@ -9,6 +9,13 @@
             "email": "tomk79@gmail.com"
         }
     ],
+    "scripts":{
+        "test": [
+            "php ./vendor/phpunit/phpunit/phpunit"
+        ]
+    } ,
+    "minimum-stability": "stable",
+    "prefer-stable": true,
     "repositories": [
     ],
     "require": {
@@ -26,6 +33,8 @@
         "tomk79/px2-paprika-fw-2.x": "dev-develop"
     },
     "require-dev": {
+        "phpunit/phpunit": "4.1.*",
+        "fabpot/goutte": "^3.2"
     },
     "autoload": {
         "files": [
