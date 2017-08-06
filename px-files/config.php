@@ -27,7 +27,7 @@ return call_user_func( function(){
 	/** トップページのパス(デフォルト "/") */
 	$conf->path_top = '/';
 	/** パブリッシュ先ディレクトリパス */
-	$conf->path_publish_dir = '../';
+	$conf->path_publish_dir = '../dist/';
 	/** 公開キャッシュディレクトリ */
 	$conf->public_cache_dir = '/common/px_resources/';
 	/** リソースディレクトリ(各コンテンツに対して1:1で関連付けられる)のパス */
