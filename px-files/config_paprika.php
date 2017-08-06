@@ -19,11 +19,11 @@ return call_user_func( function(){
 	$conf_paprika->database->password = null;
 
 	if( !is_dir( __DIR__.'/_sys/ram/caches/' ) ){ mkdir( __DIR__.'/_sys/ram/caches/' ); }
-	if( !is_dir( __DIR__.'/_sys/ram/caches/excellent_db_tables/' ) ){ mkdir( __DIR__.'/_sys/ram/caches/excellent_db_tables/' ); }
+	if( !is_dir( __DIR__.'/_sys/ram/caches/excellent_db/' ) ){ mkdir( __DIR__.'/_sys/ram/caches/excellent_db/' ); }
 
 	// Excellent DB 初期化
 	$pdo = new \PDO(
-		'sqlite:'.__DIR__.'/_sys/ram/data/excellent_db.sqlite',
+		$conf_paprika->database->dbms.':'.$conf_paprika->database->host,
 		null, null,
 		array(
 			\PDO::ATTR_PERSISTENT => false, // ←これをtrueにすると、"持続的な接続" になる
@@ -33,14 +33,10 @@ return call_user_func( function(){
 		// テーブル名の接頭辞
 		"prefix" => "wasabi2",
 		// データベース設計書
-		"path_definition_file" => __DIR__.'/databases/tables.xlsx',
+		"path_definition_file" => __DIR__.'/excellent_db/tables.xlsx',
 		// キャッシュディレクトリ
-		"path_cache_dir" => __DIR__.'/_sys/ram/caches/excellent_db_tables/',
+		"path_cache_dir" => __DIR__.'/_sys/ram/caches/excellent_db/',
 	) );
-
-	// データベーステーブルを初期化
-	$exdb->migrate_init_tables();
-
 	$conf_paprika->exdb = $exdb;
 
 	return $conf_paprika;
