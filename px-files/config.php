@@ -105,7 +105,8 @@ return call_user_func( function(){
 		'*.htm' => 'html' ,
 		'*.css' => 'css' ,
 		'*.js' => 'js' ,
-		'*.php' => 'php' ,
+		'*.php' => 'php' , // <- add
+		'*.php/*' => 'php' , // <- add
 		'*.png' => 'pass' ,
 		'*.jpg' => 'pass' ,
 		'*.gif' => 'pass' ,
@@ -127,7 +128,8 @@ return call_user_func( function(){
 	$conf->paths_enable_sitemap = array(
 		'*.html',
 		'*.htm',
-		'*.php',
+		'*.php', // <- add
+		'*.php/*', // <- add
 	);
 
 
