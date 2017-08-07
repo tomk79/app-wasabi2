@@ -29,9 +29,9 @@
 			<div class="container">
 				<p class="theme_si"><a href="/">WASABI 2</a></p>
 				<div class="theme_shouldernavi">
-<ul><li><a href="/signup.php">サインアップ</a></li><li><a href="/login.php">ログイン</a></li><li><a href="/profile/index.php">プロフィール</a></li><li><a href="/projects/index.php" class="current">プロジェクト</a></li><li><a href="/_tmp/form.php">Forms</a></li><li><a href="/logout.php">ログアウト</a></li></ul>				</div>
+<ul><li><a href="/signup.php">サインアップ</a></li><li><a href="/login.php">ログイン</a></li><li><a href="/_tmp/form.php">Forms</a></li><li><a href="/logout.php">ログアウト</a></li></ul>				</div>
 				<div class="theme_globalnavi">
-<ul></ul>
+<ul><li><a href="/profile/index.php">プロフィール</a></li><li><a href="/projects/index.php" class="current">プロジェクト</a></li></ul>
 				</div>
 			</div>
 		</header>
@@ -57,10 +57,14 @@
 		<footer class="theme_footer">
 			<div class="container">
 				<nav class="theme_megafooter_navi">
+<ul>
+<li><a href="/profile/index.php">プロフィール</a></li>
+<li><a href="/projects/index.php" class="current">プロジェクト</a></li>
+</ul>
 				</nav>
 			</div>
 			<div class="container theme_footer_shouldernavi">
-<ul><li><a href="/">ホーム</a></li><li><a href="/signup.php">サインアップ</a></li><li><a href="/login.php">ログイン</a></li><li><a href="/profile/index.php">プロフィール</a></li><li><a href="/projects/index.php" class="current">プロジェクト</a></li><li><a href="/_tmp/form.php">Forms</a></li><li><a href="/logout.php">ログアウト</a></li></ul>			</div>
+<ul><li><a href="/">ホーム</a></li><li><a href="/signup.php">サインアップ</a></li><li><a href="/login.php">ログイン</a></li><li><a href="/_tmp/form.php">Forms</a></li><li><a href="/logout.php">ログアウト</a></li></ul>			</div>
 			<div class="container">
 				<p style="text-align:center;">&copy;Pickles 2 Project.</p>
 			</div>
